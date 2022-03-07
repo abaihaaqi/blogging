@@ -1,11 +1,15 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Head from "next/head"
 import Link from "next/link"
 import Script from "next/script"
-import Layout from "../../components/layout"
+
+import {
+  faStar
+} from "@fortawesome/free-solid-svg-icons"
 
 export default function FirstPost() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>First Post - Nizar Baihaqi</title>
       </Head>
@@ -21,7 +25,11 @@ export default function FirstPost() {
         <Link href="/">
           <a>Back &rarr;</a>
         </Link>
+        <FontAwesomeIcon
+          icon={faStar}
+          style={{ fontSize: 100, color: "blue" }}
+        />
       </div>
-    </Layout>
+    </>
   )
 }
