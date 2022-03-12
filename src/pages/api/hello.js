@@ -1,3 +1,7 @@
+import { getSortedPostsData } from "~/lib/posts"
+
 export default function handler(req, res) {
-  res.status(200).json({ text: 'Hello' })
+  const allPostsData =  getSortedPostsData()
+  
+  res.status(200).json({ ...allPostsData })
 }

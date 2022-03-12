@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Date from '../components/date'
-import { getSortedPostsData } from '../lib/posts'
+import Layout from '~/components/layout.js'
+import Date from '~/components/date'
+import { getSortedPostsData } from '~/lib/posts'
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
@@ -14,38 +15,33 @@ export async function getStaticProps() {
 
 export default function Home ({ allPostsData }) {
   return (
-    <div className="container max-w-screen-md">
+    <Layout home title="Nizar Baihaqi's blog">
       <Head>
-        <title>Articles - Nizar Baihaqi</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Blog - Nizar Baihaqi</title>
       </Head>
-
       <main>
-        <h1>
-          Welcome to my blog 📝
-        </h1>
-
-        <p>
-          Go to <Link href="/posts/first-post">First Post</Link>
-        </p>
+        <section>
+          <h2 className="text-center">Blog posts</h2>
+          <ul>
+            {allPostsData.map(({ id, date, title, author }) => (
+              <li className="card" key={id}>
+                <h4>{title}</h4>
+                <Link href={`/posts/${id}`}>
+                  <a>
+                    <p className="link text-right">
+                      Read more &#8599;
+                    </p>
+                  </a>
+                </Link>
+                <br />
+                <small>
+                  {author} | <Date dateString={date} />
+                </small>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
-
-      <section>
-        <h2>Blog</h2>
-        <ul>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className="" key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className="">
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
+    </Layout>
   )
 }

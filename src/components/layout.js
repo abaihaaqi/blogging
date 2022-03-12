@@ -1,20 +1,39 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import Head from "next/head"
+import { useRouter } from "next/router"
+import Navbar from "./Navbar"
 
-const name = 'Nizar Baihaqi'
-export const siteTitle = 'Next.js Sample Website'
+export default function Layout({ children, home, title, author }) {
+  const router = useRouter()
 
-export default function Layout({ children }) {
   return (
-    <div className="">
+    <div>
       <Head>
+        <title>{title} - Nizar Baihaqi</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className="">
-        <h1>Nizar Baihaqi</h1>
+      <Navbar />
+      <header>
+        {title && (
+          <div className="banner">
+            <h1 className="text-center">{title}</h1>
+            {author && (
+              <p>
+                Author : {author}
+              </p>
+            )}
+            {!home && (
+              <button className="text-blue-800" onClick={() => router.back()}>
+                &larr; Back
+              </button>
+            )}
+          </div>
+        )}
       </header>
-      <main>{children}</main>
+      <main className="container max-w-screen-md py-4 px-2">{children}</main>
+      <footer className="text-center">
+        <p><a href="http://nizarbaihaqi.com" className="link" target="_blank" rel="noopener noreferrer">Nizar Baihaqi</a> @ 2022</p>
+      </footer>
     </div>
+
   )
 }
