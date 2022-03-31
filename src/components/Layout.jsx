@@ -14,24 +14,26 @@ export default function Layout({ children, home, title, author }) {
       <Navbar />
       <header>
         {title && (
-          <div>
-            <h1 className="text-center">{title}</h1>
+          <div className="flex flex-col items-center max-w-4xl mx-auto px-2">
+            {!home && (
+              <h1 className="text-lg xl:text-2xl">{title}</h1>
+            )}
             {author && (
               <p>
                 Author : {author}
               </p>
             )}
             {!home && (
-              <button className="text-blue-800" onClick={() => router.back()}>
+              <button className="text-blue-300" onClick={() => router.back()}>
                 &larr; Back
               </button>
             )}
           </div>
         )}
       </header>
-      <main className="container max-w-screen-md py-4 px-2">{children}</main>
+      <main className="container max-w-3xl py-4 px-2">{children}</main>
       <footer className="text-center">
-        <p><a href="http://nizarbaihaqi.com" className="link" target="_blank" rel="noopener noreferrer">Nizar Baihaqi</a> @ 2022</p>
+        <p><a href="http://nizarbaihaqi.com" className="link" target="_blank" rel="noopener noreferrer">Nizar Baihaqi</a> @ 2022 | Minimalistic</p>
       </footer>
     </div>
 
