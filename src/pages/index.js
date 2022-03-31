@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import Layout from '~/components/layout.js'
 import Date from '~/components/date'
@@ -15,10 +14,7 @@ export async function getStaticProps() {
 
 export default function Home ({ allPostsData }) {
   return (
-    <Layout home title="Nizar Baihaqi's blog">
-      <Head>
-        <title>Blog - Nizar Baihaqi</title>
-      </Head>
+    <Layout>
       <main>
         <section>
           <h2 className="text-center">Blog posts</h2>
@@ -26,9 +22,9 @@ export default function Home ({ allPostsData }) {
             {allPostsData.map(({ id, date, title, author }) => (
               <li className="card" key={id}>
                 <h4>{title}</h4>
-                <Link href={`/posts/${id}`}>
+                <Link href={`/post/${id}`}>
                   <a>
-                    <p className="link text-right">
+                    <p className="text-right">
                       Read more &#8599;
                     </p>
                   </a>

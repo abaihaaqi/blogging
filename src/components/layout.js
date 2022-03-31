@@ -14,7 +14,7 @@ export default function Layout({ children, home, title, author }) {
       <Navbar />
       <header>
         {title && (
-          <div className="banner">
+          <div>
             <h1 className="text-center">{title}</h1>
             {author && (
               <p>

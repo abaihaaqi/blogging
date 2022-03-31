@@ -1,10 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSun,
-  faMoon,
-  faBars
-} from "@fortawesome/free-solid-svg-icons"
-
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes"
 
@@ -27,7 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="sticky top-0 bg-pastel-blue dark:bg-night-purple px-3 py-2 flex justify-between items-center">
+      <div className="sticky top-0 px-3 py-2 flex justify-between items-center">
         <Link href="/">
           <a className="flex items-center gap-2 font-bold">
             <Image
@@ -38,17 +31,11 @@ export default function Navbar() {
           </a>
         </Link>
         <div className="flex gap-1">
-          <button className="btn bg-none rounded-full" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
-            <FontAwesomeIcon
-              icon={theme === 'dark' ? faMoon : faSun}
-              className="w-4"
-            />
+          <button className="bg-none rounded-full" onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+            kil
           </button>
-          <button className="btn bg-none rounded-full" onClick={() => setIsOpen(true)}>
-            <FontAwesomeIcon
-              icon={faBars}
-              className="w-4"
-            />
+          <button className="bg-none rounded-full" onClick={() => setIsOpen(true)}>
+            huhu
           </button>
         </div>
       </div>

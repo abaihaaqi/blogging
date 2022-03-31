@@ -1,9 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faNewspaper,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons"
 import Image from "next/image";
 import Link from "next/link";
 
