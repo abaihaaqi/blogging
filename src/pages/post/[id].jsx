@@ -21,17 +21,19 @@ export async function getStaticPaths() {
 }
 
 export default function Post ({ postData }) {
+  const metaContent = {
+    url: postData.id,
+    title: postData.title,
+    description: postData.desc,
+    img: postData.img
+  }
+
   return (
-    <Layout title={postData.title} author={postData.author}>
-      <Head>
-        <title>{postData.title} - {postData.author}</title>
-      </Head>
-      <article>
-        <div className="py-4">
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+    <Layout title={postData.title} metaContent={metaContent}>
+      <div className="py-4">
+        <Date dateString={postData.date} />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>
   )
 }
