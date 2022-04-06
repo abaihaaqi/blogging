@@ -29,7 +29,7 @@ export default function Post ({ postData }) {
   }
 
   return (
-    <Layout title={postData.title} metaContent={metaContent}>
+    <Layout title={postData.title} img={postData.img} metaContent={metaContent}>
       <div className="py-4">
         <Date dateString={postData.date} />
       </div>
