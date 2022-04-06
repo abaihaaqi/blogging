@@ -26,8 +26,8 @@ export default function MetaTags({ url, title, description, img }) {
       <meta name="keywords" content="nizar, baihaqi, frontend, website, developer, indonesia, react, reactjs, vue, vuejs" />
       <meta name="author" content="Nizar Baihaqi" />
       <meta name="publisher" content="Nizar Baihaqi" />
-      <meta name="theme-color" content='#C8FFFF' />
-      <meta name="color-scheme" content='light' />
+      <meta name="theme-color" content='#000000' />
+      <meta name="color-scheme" content='dark' />
       
       {/* Icons */}
       <link rel="icon" href="/favicon.ico" />
