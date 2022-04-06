@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-black text-white
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  b,
+  em {
+    @apply font-bold
+  }
+
+  h1 {
+    @apply text-2xl
+  }
+  h2 {
+    @apply text-xl
+  }
+  h3 {
+    @apply text-lg
+  }
+  h4 {
+    @apply text-[1.5rem]
+  }
+
+  a {
+    @apply hover:underline active:underline
+  }
+
+  p {
+    @apply py-3
+  }
+
+  blockquote {
+    @apply border-l-8
+  }
+
+  ul {
+    @apply list-disc list-inside mb-2;
+  }
+  
+  ol {
+    @apply list-decimal list-inside mb-2;
+  }
+
+  hr {
+    @apply border-t border-white my-2
+  }
+}
