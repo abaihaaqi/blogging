@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-overall text-white
+    @apply bg-black text-white
   }
 
   h1,
@@ -16,7 +16,7 @@
   h6,
   b,
   em {
-    @apply font-bold my-3
+    @apply font-bold
   }
 
   h1 {
@@ -41,7 +41,7 @@
   }
 
   blockquote {
-    @apply bg-secondary border-l-8 border-primary
+    @apply border-l-8
   }
 
   ul {
@@ -53,6 +53,6 @@
   }
 
   hr {
-    @apply border-t border-black my-2
+    @apply border-t border-white my-2
   }
 }

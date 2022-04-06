@@ -18,23 +18,21 @@ export default function Home ({ allPostsData }) {
       <article>
         <section>
           <h3 className="text-center mb-10">Blog posts</h3>
-          <ul>
-            {allPostsData.map(({ id, date, title, author }) => (
-              <div className="my-6" key={id}>
-                <h4>{title}</h4>
-                <div className='flex justify-between items-center'>
-                  <small>
-                    {author} | <Date dateString={date} />
-                  </small>
-                  <Link href={`/post/${id}`}>
-                    <a>
-                      Read more &#8599;
-                    </a>
-                  </Link>
-                </div>
+          {allPostsData.map(({ id, date, title, author }) => (
+            <div className="my-3 bg-slate-900/40 rounded-lg py-3 px-4" key={id}>
+              <h4>{title}</h4>
+              <div className='flex justify-between items-center mt-3'>
+                <small>
+                  {author} | <Date dateString={date} />
+                </small>
+                <Link href={`/post/${id}`}>
+                  <a>
+                    Read more &#8599;
+                  </a>
+                </Link>
               </div>
-            ))}
-          </ul>
+            </div>
+          ))}
         </section>
       </article>
     </Layout>
