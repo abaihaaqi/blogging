@@ -14,26 +14,22 @@
   h4,
   h5,
   h6,
-  b,
-  em {
+  b {
     @apply font-bold
   }
 
   h1 {
-    @apply text-2xl
+    @apply text-lg md:text-2xl
   }
   h2 {
-    @apply text-xl
+    @apply text-[1.5rem] md:text-xl
   }
   h3 {
-    @apply text-lg
-  }
-  h4 {
-    @apply text-[1.5rem]
+    @apply text-base md:text-lg
   }
 
   a {
-    @apply hover:underline active:underline
+    @apply text-blue-300 hover:underline active:underline
   }
 
   p {
@@ -41,7 +37,7 @@
   }
 
   blockquote {
-    @apply border-l-8
+    @apply border-l-8 pl-3 border-white/10 bg-white/5 my-3
   }
 
   ul {
