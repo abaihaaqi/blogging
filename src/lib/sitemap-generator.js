@@ -23,7 +23,7 @@ function toUrlTemplate(pathName) {
 
     return `
   <url>
-${`   <loc>https://blog.nizarbaihaqi.com${filteredPath}</loc>`}
+    <loc>${`https://blog.nizarbaihaqi.com${filteredPath}`}</loc>
     <lastmod>${data.date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
