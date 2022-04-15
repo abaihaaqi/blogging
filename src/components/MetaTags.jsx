@@ -28,7 +28,6 @@ export default function MetaTags({ url, title, description, img }) {
       <meta name="publisher" content="Nizar Baihaqi" />
       <meta name="theme-color" content='#000000' />
       <meta name="color-scheme" content='dark' />
-      <link rel='canonical' href={basePath} />
       
       {/* Icons */}
       <link rel="icon" href="/favicon.ico" />
