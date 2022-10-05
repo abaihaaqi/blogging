@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useRouter } from "next/router"
 import MetaTags from "./MetaTags"
 import Navbar from "./Navbar"
-import defaultImg from '~~/public/images/default.png'
+import defaultImg from '~/public/images/default.png'
 
 export default function Layout({ children, home, title, img, metaContent }) {
   const router = useRouter()

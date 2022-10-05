@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Icon from "~~/public/favicon-32x32.png";
+import Icon from "~/public/favicon-32x32.png";
 
 export default function Navbar({ home }) {
   return (
