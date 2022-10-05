@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import Layout from '~/components/Layout'
-import Date from '~/components/function/date'
+import Layout from '~~/components/Layout'
+import Date from '~~/components/function/date'
 import { getSortedPostsData } from '~/lib/posts'
 import Image from 'next/image'
 import defaultImg from '~~/public/images/default.png'
