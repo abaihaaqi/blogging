@@ -17,8 +17,8 @@ export default function Layout({ children, home, title, img, metaContent }) {
         <div className="flex flex-col justify-center items-center text-center max-w-4xl mx-auto px-2 absolute inset-0 z-10">
           <h1 className="text-lg xl:text-2xl mb-6">{title}</h1>
           {!home && (
-            <button className="text-blue-300" onClick={() => router.back()}>
-              &larr; Back
+            <button className="text-blue-300" onClick={() => router.push("/")}>
+              &larr; Home
             </button>
           )}
         </div>
