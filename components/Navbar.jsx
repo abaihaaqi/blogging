@@ -5,20 +5,24 @@ import Icon from "~/public/favicon-32x32.png";
 
 export default function Navbar({ home }) {
   return (
-    <>
-      <div className="sticky top-0 px-3 py-2 bg-white/5 flex justify-between items-center z-50">
-        <div className="container max-w-5xl">
-          <Link href="/">
-            <a className="flex items-center w-max gap-2 font-bold">
-              <Image
-                src={Icon}
-                alt="Icon Nizar Baihaqi"
-              />
-              {home ? `Ijay's Blog` : `Home`}
-            </a>
+    <nav className="sticky top-0 bg-black z-50">
+      <div className="container max-w-5xl h-[50px] flex justify-between items-center px-3">
+        <Link href="/">
+          <a title="Home" className="flex items-center w-max gap-2 font-serif font-bold text-white">
+            <Image src={Icon} alt="Icon Nizar Baihaqi" width={24} height={24} />
+            {home ? `Ijay's Blog` : `Home`}
+          </a>
+        </Link>
+        {/* Create login and category functionality
+        <div className="flex gap-2">
+          <Link href="/category">
+            <a className="rounded px-3 text-white hover:bg-zinc-800 hover:no-underline transition-all">Category</a>
           </Link>
-        </div>
+          <button className="border border-white rounded px-3 hover:bg-white hover:text-black transition-all">
+            Login
+          </button>
+        </div> */}
       </div>
-    </>
-  )
+    </nav>
+  );
 }
