@@ -1,7 +1,7 @@
 ---
 title: 'Cara pakai Notion'
 date: '2022-04-07'
-topics: ['notion']
+topics: ['Notion']
 ---
 
 Untuk kamu yang anggota team yang kerjaannya *planning* dan *organizing*, Notion bisa jadi *tool* yang perlu kamu pelajari. Notion itu aplikasi *note writer*, kamu bisa nulis apapun di dalamnya. Mau cerpen, puisi ataupun belanjaan hari ini. 
