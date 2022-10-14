@@ -47,7 +47,7 @@ export default function Layout({
         />
         <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
         <div className="flex flex-col justify-center items-center text-center max-w-4xl mx-auto px-2 absolute inset-0 z-10">
-          <h1 className="font-serif text-lg xl:text-2xl mb-6">{title}</h1>
+          <h1 className="font-serif font-normal 2xl:text-2xl mb-6">{title}</h1>
           {/* {home ? (
             <form className="flex items-stretch gap-2 h-[38px]">
               <input type="text" placeholder="Search" />
