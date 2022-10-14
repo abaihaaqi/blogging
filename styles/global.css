@@ -57,6 +57,6 @@
   }
 
   input {
-    @apply rounded bg-zinc-900 px-3 border-2 border-zinc-900 focus-visible:bg-zinc-800 focus-visible:outline-none focus-visible:border-white transition-all;
+    @apply rounded bg-zinc-800 px-3 border-2 border-zinc-800 focus-visible:bg-zinc-700 focus-visible:outline-none focus-visible:border-white transition-all;
   }
 }
