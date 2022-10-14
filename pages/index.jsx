@@ -18,7 +18,7 @@ export default function Home({ allPostsData }) {
   return (
     <Layout home title="Blog posts">
       <div className="grid grid-cols-1 gap-6">
-        {allPostsData.map(({ id, date, title, img }) => (
+        {allPostsData.map(({ id, date, title, img, author, category }) => (
           <Link key={id} href={`/post/${id}`}>
             <a className="bg-zinc-900 rounded-lg p-4 hover:bg-zinc-800 focus:bg-zinc-800 transform hover:scale-[1.01] active:scale-[0.99] transition-all hover:no-underline focus:no-underline text-white">
               <section>
@@ -31,10 +31,15 @@ export default function Home({ allPostsData }) {
                   />
                 </div>
                 <h3>{title}</h3>
-                <div className="flex justify-between items-center mt-3">
-                  <small>
-                    <Date dateString={date} />
-                  </small>
+                <p>
+                  {author} - <Date dateString={date} />
+                </p>
+                <div className="flex gap-3">
+                  {category.map((item) => (
+                    <Link href="#">
+                      <a title="link under development">{item}</a>
+                    </Link>
+                  ))}
                 </div>
               </section>
             </a>
