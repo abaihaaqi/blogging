@@ -12,11 +12,12 @@ module.exports = {
       ...defaultTheme.screens,
     },
     fontSize: {
-      sm: "0.9rem",
-      base: "1rem",
-      md: "1.5rem",
-      lg: "2rem",
-      xl: "2.5rem",
+      "sm": "0.9rem",
+      "base": "1rem",
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "2.5rem",
+      "2xl": "3rem",
     },
     container: {
       center: true,
