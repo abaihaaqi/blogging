@@ -19,9 +19,12 @@ export default function Home({ allPostsData }) {
     <Layout home title="Blog posts">
       <div className="grid grid-cols-1 gap-6">
         {allPostsData.map(({ id, date, title, img, author, category }) => (
-          <Link key={id} href={`/post/${id}`}>
-            <a className="bg-zinc-900 rounded-lg p-4 hover:bg-zinc-800 focus:bg-zinc-800 transform hover:scale-[1.01] active:scale-[0.99] transition-all hover:no-underline focus:no-underline text-white">
-              <section>
+          <section
+            key={id}
+            className="bg-zinc-900 rounded-lg hover:bg-zinc-800 focus:bg-zinc-800 transform hover:scale-[1.01] active:scale-[0.99] transition-all"
+          >
+            <Link href={`/post/${id}`}>
+              <a className="hover:no-underline focus:no-underline text-white">
                 <div className="relative rounded-xl overflow-hidden h-[200px] xs:h-[400px] mb-4">
                   <Image
                     src={img || defaultImg}
@@ -30,20 +33,22 @@ export default function Home({ allPostsData }) {
                     objectFit="cover"
                   />
                 </div>
-                <h3>{title}</h3>
-                <p>
-                  {author} - <Date dateString={date} />
-                </p>
-                <div className="flex gap-3">
-                  {category.map((item) => (
-                    <Link href="#">
-                      <a title="link under development">{item}</a>
-                    </Link>
-                  ))}
+                <div className="px-4 pb-4">
+                  <h3>{title}</h3>
+                  <p>
+                    {author} - <Date dateString={date} />
+                  </p>
+                  <div className="flex gap-3">
+                    {category.map((item) => (
+                      <Link href="#">
+                        <a title="link under development">{item}</a>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </section>
-            </a>
-          </Link>
+              </a>
+            </Link>
+          </section>
         ))}
       </div>
     </Layout>

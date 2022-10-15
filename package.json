@@ -19,7 +19,11 @@
     "react-dom": "^18.2.0",
     "react-instantsearch-hooks-web": "^6.36.0",
     "react-markdown": "^8.0.3",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-slug": "^5.0.1",
     "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
+    "remark-toc": "^8.0.1",
     "sharp": "^0.31.1"
   },
   "devDependencies": {
