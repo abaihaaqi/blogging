@@ -3,6 +3,10 @@ import Date from "~/components/function/date";
 import Layout from "~/components/Layout";
 import { getAllPostIds, getPostData } from "~/lib/posts";
 import Disqus from "disqus-react";
+import remarkGfm from "remark-gfm";
+import remarkToc from "remark-toc";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -47,7 +51,31 @@ export default function Post({ postData }) {
         <p className="py-0">
           {postData.author} - <Date dateString={postData.date} />
         </p>
-        <ReactMarkdown children={postData.content} />
+        <ReactMarkdown
+          children={postData.content}
+          remarkPlugins={[
+            remarkGfm,
+            [remarkToc, { heading: "Daftar Isi", prefix: "user-content-" }],
+          ]}
+          rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
+          linkTarget={(href) => {
+            const regexp = /#user-content-/;
+            if (!href.match(regexp)) {
+              return "_blank";
+            }
+          }}
+          transformLinkUri={(href) => {
+            const regexpUserContent = /#user-content-/;
+            if (href.match(regexpUserContent)) {
+              const regexpFn = /fn/;
+              if (!href.match(regexpFn)) {
+                return href.replace(/user-content-/, "");
+              }
+            } else {
+              return href;
+            }
+          }}
+        />
       </div>
       <div className="bg-white rounded-lg px-3">
         <Disqus.DiscussionEmbed shortname={shortname} config={disqusConfig} />
