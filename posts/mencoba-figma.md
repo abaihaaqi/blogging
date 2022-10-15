@@ -62,4 +62,4 @@ Saya memberikan warna utama pada tombol masuk. Agar terlihat mencolok dan dapat 
 
 [^1]: Materi Desain Interaksi, kelas IF22B, Universitas Muhammadiyah Bandung
 
-[^2]: Ramdhan. Apriyanto, https://www.kompasiana.com/opraywinter/5c5be460677ffb1bf94d8bd3/perbedaan-font-serif-dengan-sans-serif Accessed 12 October 2022
+[^2]: Ramdhan. Apriyanto, [Kompasiana](https://www.kompasiana.com/opraywinter/5c5be460677ffb1bf94d8bd3/perbedaan-font-serif-dengan-sans-serif) Accessed 12 October 2022
