@@ -70,6 +70,8 @@ export default function Post({ postData }) {
               const regexpFn = /fn/;
               if (!href.match(regexpFn)) {
                 return href.replace(/user-content-/, "");
+              } else {
+                return href
               }
             } else {
               return href;
