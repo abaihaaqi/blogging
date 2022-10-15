@@ -5,6 +5,8 @@ category: ['Notion']
 author: 'Nizar Baihaqi'
 ---
 
+## Daftar Isi
+
 Untuk kamu yang anggota team yang kerjaannya *planning* dan *organizing*, Notion bisa jadi *tool* yang perlu kamu pelajari. Notion itu aplikasi *note writer*, kamu bisa nulis apapun di dalamnya. Mau cerpen, puisi ataupun belanjaan hari ini. 
 
 ![logo-apple-notes&samsung-notes.png](/content/cara-pakai-notion/logo-notes.png)
