@@ -1,7 +1,7 @@
 ---
 title: 'Membuat prototype Mobile App dengan Figma'
 date: '2022-10-12'
-img: '/content/mencoba-figma/Login.png'
+img: '/content/mencoba-figma/login-prototype.png'
 category: ['Figma', 'Tugas IF22B']
 author: 'Nizar Baihaqi'
 ---
