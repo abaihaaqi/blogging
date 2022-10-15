@@ -63,4 +63,16 @@
   input {
     @apply rounded bg-zinc-800 px-3 border-2 border-zinc-800 focus-visible:bg-zinc-700 focus-visible:outline-none focus-visible:border-white transition-all;
   }
+
+  th {
+    @apply py-2 border-b-2
+  }
+
+  td {
+    @apply py-2 px-3 border-r
+  }
+
+  tr td:last-child {
+    @apply border-r-0
+  }
 }
