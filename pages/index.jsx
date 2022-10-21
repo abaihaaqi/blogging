@@ -38,13 +38,6 @@ export default function Home({ allPostsData }) {
                   <p>
                     {author} - <Date dateString={date} />
                   </p>
-                  <div className="flex gap-3">
-                    {category.map((item) => (
-                      <Link href="#">
-                        <a title="link under development">{item}</a>
-                      </Link>
-                    ))}
-                  </div>
                 </div>
               </a>
             </Link>
