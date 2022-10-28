@@ -35,7 +35,7 @@ export default function Post({ postData }) {
 
   const shortname = "nizar-baihaqi";
   const disqusConfig = {
-    url: "https://blog.nizarbaihaqi.com",
+    url: `https://blog.nizarbaihaqi.com/post/${postData.id}`,
     identifier: postData.id,
     title: postData.title,
   };
