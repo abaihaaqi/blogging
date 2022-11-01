@@ -9,12 +9,21 @@ export default function MetaTags({ url, title, description, img }) {
     defaultDesc: "Get to know me by reading my coding journey here.",
     defaultImg: "/images/default.png",
   }
+  
+  const displayImage = new Image();
+
+  displayImage.src = img;
 
   const option = {
     title: title ? `${title} - ${defaultOpt.defaultTitle}` : defaultOpt.defaultTitle,
     desc: description || defaultOpt.defaultDesc,
     url: `${basePath}/${url || ''}`,
-    img: `${basePath}${img || defaultOpt.defaultImg}`
+    img: {
+      link: `${basePath}${img || defaultOpt.defaultImg}`,
+      width: displayImage.width || 1200,
+      height: displayImage.height || 1200,
+    }
+    
   }
 
   return (
@@ -40,16 +49,16 @@ export default function MetaTags({ url, title, description, img }) {
       <meta itemProp="name" content={option.title}/>
       <meta name="google-site-verification" content="cKGmdlxFixAj5un3xVbpDZ0nn_Fprvr2Xh6S7qjiFP4" />
       <meta itemProp="description" content={option.desc}/>
-      <meta itemProp="image" content={option.img}/>
+      <meta itemProp="image" content={option.img.link}/>
 
       {/* Open Graph Meta Tags */}
       <meta property="og:title" content={option.title}/>
       <meta property="og:description" content={option.desc}/>
       <meta property="og:type" content="website"/>
       <meta property="og:url" content={option.url}/>
-      <meta property="og:image" content={option.img}/>
-      <meta property="og:image:width" content={1200}/>
-      <meta property="og:image:height" content={1200}/>
+      <meta property="og:image" content={option.img.link}/>
+      <meta property="og:image:width" content={option.img.width}/>
+      <meta property="og:image:height" content={option.img.height}/>
       <meta property="og:site_name" content="Nizar Baihaqi"/>
       <meta property="og:locale" content={'id_ID'}/>
 
