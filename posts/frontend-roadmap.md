@@ -1,7 +1,7 @@
 ---
 title: 'Front-end Web Developer Roadmap'
 date: '2022-10-31'
-img: '/content/frontend-roadmap/roadmap.png'
+img: '/content/frontend-roadmap/roadmap-1200x1200.png'
 category: ['Frontend', 'Tugas IF22B']
 author: 'Nizar Baihaqi'
 ---
