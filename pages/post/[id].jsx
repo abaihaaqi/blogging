@@ -55,26 +55,13 @@ export default function Post({ postData }) {
           children={postData.content}
           remarkPlugins={[
             remarkGfm,
-            [remarkToc, { heading: "Daftar Isi", prefix: "user-content-" }],
+            [remarkToc, { heading: "Daftar Isi" }],
           ]}
           rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
           linkTarget={(href) => {
-            const regexp = /#user-content-/;
-            if (!href.match(regexp)) {
+            const regexp = /https:\/\//;
+            if (href.match(regexp)) {
               return "_blank";
-            }
-          }}
-          transformLinkUri={(href) => {
-            const regexpUserContent = /#user-content-/;
-            if (href.match(regexpUserContent)) {
-              const regexpFn = /fn/;
-              if (!href.match(regexpFn)) {
-                return href.replace(/user-content-/, "");
-              } else {
-                return href
-              }
-            } else {
-              return href;
             }
           }}
         />
