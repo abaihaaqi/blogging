@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import remarkToc from "remark-toc";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { useEffect } from "react";
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
@@ -40,6 +41,24 @@ export default function Post({ postData }) {
     title: postData.title,
   };
 
+  useEffect(() => {
+    const article = document.querySelector("article");
+
+    const headings = Array.from(
+      article.querySelectorAll("h1, h2, h3, h4, h5, h6")
+    );
+
+    headings.map((heading) => (heading.className = "scroll-mt-[50px]"));
+
+    const footnotes = Array.from(
+      article.querySelectorAll(".footnotes > ol > li")
+    );
+    footnotes.map((item) => (item.className = "scroll-mt-[50px]"));
+
+    const references = Array.from(article.querySelectorAll("p > sup > a"));
+    references.map((item) => (item.className = "scroll-mt-[50px]"));
+  });
+
   return (
     <Layout
       title={postData.title}
@@ -53,28 +72,12 @@ export default function Post({ postData }) {
         </p>
         <ReactMarkdown
           children={postData.content}
-          remarkPlugins={[
-            remarkGfm,
-            [remarkToc, { heading: "Daftar Isi", prefix: "user-content-" }],
-          ]}
+          remarkPlugins={[remarkGfm, [remarkToc, { heading: "Daftar Isi" }]]}
           rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
           linkTarget={(href) => {
-            const regexp = /#user-content-/;
-            if (!href.match(regexp)) {
+            const regexp = /https:\/\//;
+            if (href.match(regexp)) {
               return "_blank";
-            }
-          }}
-          transformLinkUri={(href) => {
-            const regexpUserContent = /#user-content-/;
-            if (href.match(regexpUserContent)) {
-              const regexpFn = /fn/;
-              if (!href.match(regexpFn)) {
-                return href.replace(/user-content-/, "");
-              } else {
-                return href
-              }
-            } else {
-              return href;
             }
           }}
         />
