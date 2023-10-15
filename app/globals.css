@@ -5,10 +5,10 @@
 @layer base {
   html,
   body {
-    @apply bg-black text-white leading-loose scroll-smooth;
+    @apply bg-black text-white;
   }
 
-  b {
+  /* b {
     @apply font-bold;
   }
 
@@ -65,14 +65,14 @@
   }
 
   th {
-    @apply py-2 border-b-2
+    @apply py-2 border-b-2;
   }
 
   td {
-    @apply py-2 px-3 border-r
+    @apply py-2 px-3 border-r;
   }
 
   tr td:last-child {
-    @apply border-r-0
-  }
+    @apply border-r-0;
+  } */
 }
