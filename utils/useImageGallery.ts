@@ -8,7 +8,7 @@ type imageDataProps = {
 };
 
 export async function getImageData(slug: string) {
-  const res = await fetch("http://localhost:3000/image-gallery.json");
+  const res = await fetch(`${process.env.BASE_URL}/image-gallery.json`);
 
   const data = await res.json();
 
